@@ -1,0 +1,19 @@
+git filter-branch -f --commit-filter '
+
+    # check to see if the committer (email is the desired one)
+ 
+            # Set the new desired name
+            GIT_COMMITTER_NAME="msnproduction";
+            GIT_AUTHOR_NAME="sisu2468";
+
+            # Set the new desired email
+            GIT_COMMITTER_EMAIL="111676859+berthutapea@users.noreply.github.com";
+            GIT_AUTHOR_EMAIL="danielcoder1022@gmail.com";
+  
+            # No need to update so commit as is
+            git commit-tree "$@";'
+HEAD
+
+git remote set-url origin <repo-name>
+
+git push orign <branch-name>
